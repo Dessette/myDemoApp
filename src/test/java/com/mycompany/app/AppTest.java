@@ -24,17 +24,17 @@ public class AppTest
     }
 
     public void testFound() {
-        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4));
         assertTrue(new App().search(array, 4));
       }
   
       public void testNotFound() {
-        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4));
         assertFalse(new App().search(array, 5));
       }
   
       public void testEmptyArray() {
-        ArrayList<Integer> array = new ArrayList<>();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         assertFalse(new App().search(array, 1));
       }
   
