@@ -23,23 +23,43 @@ public class AppTest
         super( testName );
     }
 
-    public void testFound() {
+     public void testPass() {
         ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4));
-        assertTrue(new App().search(array, 4));
+        int array2[] = {1,2,3,4};
+        String str = "a";
+        int num = 2;
+        assertEquals(new App().passGenerator(str,array2,array,num),"a3");
       }
   
-      public void testNotFound() {
+      public void testLength() {
         ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4));
-        assertFalse(new App().search(array, 5));
+        int array2[] = {1,2,3,4};
+        String str = "a";
+        int num = 7;
+        assertEquals(new App().passGenerator(str,array2,array,num),"");
       }
   
-      public void testEmptyArray() {
-        ArrayList<Integer> array = new ArrayList<Integer>();
-        assertFalse(new App().search(array, 1));
+      public void testSecondLayer() {
+        ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4,20));
+        int array2[] = {1,2,3,4};
+        String str = "a";
+        int num = 4;
+        assertEquals(new App().passGenerator(str,array2,array,num),"");
       }
   
       public void testNull() {
-        assertFalse(new App().search(null, 1));
+        ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4));
+        String str = "a";
+        int num = 2;
+        assertEquals(new App().passGenerator(str,null,array,num),"");
+      }
+
+      public void testStringEmpty() {
+        ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4));
+        int array2[] = {1,2,3,4};
+        String str = "";
+        int num = 2;
+        assertEquals(new App().passGenerator(str,array2,array,num),"3");
       }
 
     /**
